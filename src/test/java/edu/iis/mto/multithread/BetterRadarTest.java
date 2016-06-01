@@ -6,13 +6,19 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
 import java.util.concurrent.Executor;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 public class BetterRadarTest {
 
+	@Rule
+	public RepeatRule repeatRule= new RepeatRule();
+	
 	@Test
+	@Repeat(1000)
 	public void launchPatriotOnceWhenNoticesAScudMissle() {
 		PatriotBattery batteryMock = mock(PatriotBattery.class);
+		
 		
 		Executor executor = new Executor(){
 			@Override
