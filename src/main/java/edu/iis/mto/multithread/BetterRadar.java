@@ -2,7 +2,7 @@ package edu.iis.mto.multithread;
 
 import java.util.concurrent.Executor;
 
-public class BetterRadar {
+public class BetterRadar implements RadarIfc {
 	
 	private PatriotBattery patriotBattery;
 	private Executor executor;
@@ -14,6 +14,7 @@ public class BetterRadar {
 		this.executor = executor;
 	}
 
+	@Override
 	public void notice(Scud enemyMissle) {
 		launchPatriot();
 	}

@@ -1,6 +1,6 @@
 package edu.iis.mto.multithread;
 
-public class Radar {
+public class Radar implements RadarIfc{
 	private PatriotBattery battery;
 
 	public Radar(PatriotBattery missle) {
